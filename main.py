@@ -5,7 +5,7 @@ from pydantic import BaseModel
 # Fastapi 앱 생성
 app = FastAPI(
     title="획 궁합 API",
-    description="나하진 바보",
+    description=".",
 )
 
 # 모델 생성
@@ -59,9 +59,9 @@ def calc_match(name: str) -> int:
         cn.append(sum)
 
     # 더하기
-    for a in range(3):
+    while len(cn) > 2:
         n_cn = []
-        for i in range(5-a):
+        for i in range(len(cn)-1):
             n_cn.append((cn[i]+cn[i+1])%10)
         cn = n_cn
 
